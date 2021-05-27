@@ -45,16 +45,14 @@ def hola(update, context):
     greetings = [
         'Hola!', 'Buen día!', 'Hola de nuevo', 'Hooooooola', 'holiwis', 'holiulis',
         'Holanda.', 'Buenas tardes', 'Todo bien?', 'Qué tal!', 'Cómo estás?', 'Cómo te va?',
-        'Qué lindo día, no?', 'Perdí \xF0\x9F\x98\x9C',
-        'Me despertaste, estaba durmiendo \xF0\x9F\x98\xA1',
+        'Qué lindo día, no?', 'Perdí 😜',
+        'Me despertaste, estaba durmiendo 😡',
         'Ufa, hay que laburar?', 'Pará que me estoy cambiando',
         'Bancame que me maquillo', 'Saludos!', 'Bonjour!', 'Ciao!', 'Hello!',
         'ayuda estoy atrapado en un bot de telegram y no puedo salir',
-        'Ay me saludaron, qué digo?', '...hola?', 'HOLA.', 'ay holis \xF0\x9F\x98\x98',
-        'Venís seguido por acá? \xF0\x9F\x98\x8F',
-        # f'Hola {context.user_data["first_name"]}. Sí, sé tu nombre. Mejor cuidate.'
+        'Ay me saludaron, qué digo?', '...hola?', 'HOLA.', 'ay holis 🥰',
+        'Venís seguido por acá? 😏'
     ]
-    print(context.user_data.keys())
     selected = random.choice(greetings)
     context.bot.send_message(
         chat_id=update.effective_chat.id,
