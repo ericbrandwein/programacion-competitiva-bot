@@ -11,3 +11,6 @@ codeforcesapipy = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+start = "python programacion-competitiva-bot.py"
