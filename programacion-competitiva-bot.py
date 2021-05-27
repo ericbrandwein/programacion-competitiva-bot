@@ -28,8 +28,10 @@ def main():
     start_handler = CommandHandler('start', start)
     dispatcher.add_handler(start_handler)
 
-    updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=TOKEN)
-    updater.bot.setWebhook('https://programacion-competitiva-bot.herokuapp.com/' + TOKEN)
+    updater.start_webhook(
+        port=PORT, url_path=TOKEN,
+        webhook_url='https://programacion-competitiva-bot.herokuapp.com/' + TOKEN
+    )
 
 
 if __name__ == '__main__':
