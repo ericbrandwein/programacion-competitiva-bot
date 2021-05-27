@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler
 import logging
 
 
-PORT = int(os.environ.get('PORT', 8443))
+PORT = 8443
 
 TOKEN_ENVVAR = 'TELEGRAM_TOKEN'
 TOKEN = os.getenv(TOKEN_ENVVAR)
