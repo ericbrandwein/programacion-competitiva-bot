@@ -32,6 +32,13 @@ def dame(update, context):
     )
 
 
+def help(update, context):
+    context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text='/dame - Devuelve un problema aleatorio de codeforces.com\n'
+    )
+
+
 def main():
     updater = Updater(token=TOKEN)
     dispatcher = updater.dispatcher
@@ -40,10 +47,11 @@ def main():
         level=logging.INFO
     )
 
-    start_handler = CommandHandler('start', start)
-    dame_handler = CommandHandler('dame', dame)
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(dame_handler)
+    commands = {'start': start, 'dame': dame, 'help': help}
+
+    for name, function in commands.items():
+        handler = CommandHandler(name, function)
+        dispatcher.add_handler(handler)
 
     updater.start_webhook(
         listen='0.0.0.0',
