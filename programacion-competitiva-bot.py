@@ -16,7 +16,7 @@ def start(update, context):
     context.bot.send_message(
         chat_id=update.effective_chat.id,
         text='¡Hola! '
-        'Para pedir un problema aleatorio de Codeforces, usá el comando \dame.'
+        'Para pedir un problema aleatorio de Codeforces, usá el comando /dame.'
     )
 
 
@@ -24,7 +24,8 @@ def dame(update, context):
     problems = cf_api.problemset_problems()['problems']
     problem = random.choice(problems)
     context.bot.send_message(
-        f'{problem.name}\n'
+        chat_id=update.effective_chat.id,
+        text=f'{problem.name}\n'
         f'https://codeforces.com/problemset/problem/{problem.contest_id}/{problem.index}'
     )
 
