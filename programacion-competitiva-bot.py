@@ -1,5 +1,6 @@
 import os
 from telegram.ext import Updater, CommandHandler
+import telegram
 import logging
 import codeforces_api
 import random
@@ -25,8 +26,9 @@ def dame(update, context):
     problem = random.choice(problems)
     context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=f'{problem.name}\n'
-        f'https://codeforces.com/problemset/problem/{problem.contest_id}/{problem.index}'
+        text=f'__*{problem.name}\*__n'
+        f'https://codeforces.com/problemset/problem/{problem.contest_id}/{problem.index}',
+        parse_mode=telegram.ParseMode.MARKDOWN_V2
     )
 
 
