@@ -52,7 +52,7 @@ def hola(update, context):
         'ayuda estoy atrapado en un bot de telegram y no puedo salir',
         'Ay me saludaron, qué digo?', '...hola?', 'HOLA.', 'ay holis \xF0\x9F\x98\x98',
         'Venís seguido por acá? \xF0\x9F\x98\x8F',
-        f'Hola {context.user_data['first_name']}. Sí, sé tu nombre. Mejor cuidate.'
+        f'Hola {context.user_data["first_name"]}. Sí, sé tu nombre. Mejor cuidate.'
     ]
     selected = random.choice(greetings)
     context.bot.send_message(
@@ -69,7 +69,7 @@ def main():
         level=logging.INFO
     )
 
-    commands = {'start': start, 'dame': dame, 'hola': hola, help': help}
+    commands = {'start': start, 'dame': dame, 'hola': hola, 'help': help}
 
     for name, function in commands.items():
         handler = CommandHandler(name, function)
