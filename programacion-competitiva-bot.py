@@ -52,8 +52,9 @@ def hola(update, context):
         'ayuda estoy atrapado en un bot de telegram y no puedo salir',
         'Ay me saludaron, qué digo?', '...hola?', 'HOLA.', 'ay holis \xF0\x9F\x98\x98',
         'Venís seguido por acá? \xF0\x9F\x98\x8F',
-        f'Hola {context.user_data["first_name"]}. Sí, sé tu nombre. Mejor cuidate.'
+        # f'Hola {context.user_data["first_name"]}. Sí, sé tu nombre. Mejor cuidate.'
     ]
+    print(context.user_data.keys())
     selected = random.choice(greetings)
     context.bot.send_message(
         chat_id=update.effective_chat.id,
