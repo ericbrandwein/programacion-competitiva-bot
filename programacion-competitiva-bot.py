@@ -35,7 +35,9 @@ def dame(update, context):
 def help(update, context):
     context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text='/dame - Devuelve un problema aleatorio de codeforces.com\n'
+        text='*Comandos:*\n'
+        '/dame \- Devuelve un problema aleatorio de codeforces.com\n',
+        parse_mode=telegram.ParseMode.MARKDOWN_V2
     )
 
 
