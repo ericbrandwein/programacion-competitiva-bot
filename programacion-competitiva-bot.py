@@ -26,7 +26,7 @@ def dame(update, context):
     problem = random.choice(problems)
     context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=f'__*{problem.name}\*__n'
+        text=f'__*{problem.name}*__\n'
         f'https://codeforces.com/problemset/problem/{problem.contest_id}/{problem.index}',
         parse_mode=telegram.ParseMode.MARKDOWN_V2
     )
