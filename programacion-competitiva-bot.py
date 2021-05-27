@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler
 import logging
 
 
-PORT = 8443
+PORT = int(os.environ.get('PORT', '8443'))
 
 TOKEN_ENVVAR = 'TELEGRAM_TOKEN'
 TOKEN = os.getenv(TOKEN_ENVVAR)
@@ -29,9 +29,12 @@ def main():
     dispatcher.add_handler(start_handler)
 
     updater.start_webhook(
-        port=PORT, url_path=TOKEN,
+        listen='0.0.0.0'
+        port=PORT,
+        url_path=TOKEN,
         webhook_url='https://programacion-competitiva-bot.herokuapp.com/' + TOKEN
     )
+    updater.idle()
 
 
 if __name__ == '__main__':
